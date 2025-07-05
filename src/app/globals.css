@@ -4,7 +4,11 @@
   box-sizing: border-box;
 }
 
+ol, ul {
+	list-style: none;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
-  transition: background 0.25s ease, color 0.25s ease;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
 }

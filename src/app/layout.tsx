@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import ThemeProvider from './providers/ThemeProvider'
 import ApolloProviderClient from './providers/ApolloProvider'
 import StyledComponentsRegistry from './providers/StyledRegistry'
-import '../styles/globals.css'
+import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Next Pokédex',
