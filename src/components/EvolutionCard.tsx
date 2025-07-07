@@ -7,20 +7,21 @@ import Image from 'next/image'
 import { firstLetterUpper } from '@/utils/utilityFunctions'
 import { usePokemonStore } from '@/store/pokemonStore'
 
+interface Props {
+  name: string
+}
+
 const extractId = (url: string) =>
   url.split('/').filter(Boolean).pop() || '0'
 
-export default function EvolutionCard({ name } : any) {
+export default function EvolutionCard({ name } : Props) {
   const [chainId, setChainId] = useState<String | null>(null)
-  const [pokeId, setPokeId] = useState<number>()
   const setCurrent = usePokemonStore((s) => s.setCurrent)
 
   const { data: pokeData } = useQuery(GET_POKEMON, { variables: { name } })
 
   useEffect(() => {
-
     const speciesUrl = pokeData?.pokemon?.species?.url
-
     if (!speciesUrl) return
     fetch(speciesUrl)
       .then((res) => res.json())
@@ -34,14 +35,12 @@ export default function EvolutionCard({ name } : any) {
   const { data: evoData, loading: evoLoading } = useQuery(GET_EVOLUTION, {
     variables: { id: chainId },
   })
-    
 
    const chainNode = evoData?.evolutionChain?.response?.chain   
    const peers =
     chainNode && name
     ? getEvolutionPeers(chainNode, name)
     : []
-
 
 
   return (
