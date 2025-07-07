@@ -14,6 +14,6 @@ export default function CardDescription({description}: {description: string}) {
     const flavorText = buildFlavorText(flavorTexts)
 
     return (
-        <p>{flavorText}</p>
+        <p className="text">{flavorText}</p>
     )
 }

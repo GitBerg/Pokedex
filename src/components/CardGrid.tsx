@@ -48,7 +48,7 @@ export default function CardGrid() {
             <section className='section-top'>
                 <div className='pokemon-name'>
                     {pokemonLoading ? (<Skeleton width={200} height={50} baseColor={theme.colors.bg} highlightColor="#ffffff" />) : (<h1>#{formatWithLeadingZeros(pokemon?.pokemon?.id)} - {pokemon?.pokemon?.name.toUpperCase()}</h1>)}
-                    {pokemonLoading ? (<Skeleton width={50} height={50} baseColor={theme.colors.bg} highlightColor="#ffffff" />)
+                    {pokeImgLoading ? (<Skeleton width={50} height={50} baseColor={theme.colors.bg} highlightColor="#ffffff" />)
                         :
                         <Image src={pokeImg?.pokemons?.results[currentPokemon.index]?.image} alt={"Image"} style={{ width: '100px', height: '100px', transform: 'translateX(-10%)' }} width={200} height={200} />
                     }
@@ -61,7 +61,7 @@ export default function CardGrid() {
             <section className='section-bottom'>
                 <div className='pokemon-stats'>
                     <div className='pokemon-image card'>
-                        {pokeImgLoading ? (<Skeleton width={200} height={'100%'} baseColor={theme.colors.card} highlightColor={theme.colors.bg} />)
+                        {pokeImgLoading ? (<Skeleton width={200} height={180} baseColor={theme.colors.card} highlightColor={theme.colors.bg} />)
                             : (<Image src={pokeImg?.pokemons?.results[currentPokemon.index]?.dreamworld} onError={(e) => { e.currentTarget.src = pokeImg?.pokemons?.results[currentPokemon.index]?.artwork }} alt={"Image"} width={300} height={300} priority />)
                         }
                     </div>
@@ -185,7 +185,7 @@ const Container = styled.div`
                    font-weight: 400;
                    border-radius: 8px;
                    color: #fff;
-                   font-size: clamp(0.5rem, 0.8vw, 3rem);
+                   font-size: clamp(0.8rem, 0.8vw, 3rem);
                 }
                 }
                 
@@ -203,7 +203,7 @@ const Container = styled.div`
                 height: 100%;
                 .info-stat{
                     font-weight: 400;
-                    font-size: clamp(0.5rem, 0.8vw, 3rem);
+                    font-size: clamp(0.7rem, 0.8vw, 3rem);
                     color: ${({ theme }) => theme.colors.text};
                     transition: all 0.5s ease-in-out;
                 }
@@ -238,7 +238,7 @@ const Container = styled.div`
                     align-items: center;
                     font-weight: 400;
                     border-radius: 6px;
-                    font-size: clamp(0.5rem, 0.7vw, 3rem);
+                    font-size: clamp(0.8rem, 0.8vw, 3rem);
                     color: #fff;
                     padding: 4px 8px; 
                 }
@@ -258,18 +258,15 @@ const Container = styled.div`
                 display: flex;
                 gap: 2rem;
                 height: 15%;
-                overflow-x: auto;
-                overflow-y: hidden;
                 min-height: 158px;
                 .evolution-list{
                     display: flex;
                     gap: 2rem;
+                    min-width: 100px;
                     width: 100%;
                     height: 100%;
                     overflow-x: auto;
-                    overflow: hidden;
                     .evolution{
-                    overflow: hidden;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -285,8 +282,7 @@ const Container = styled.div`
                     img{
                         object-fit: contain;
                         width:100%;
-                        height: 80%;
-                        
+                        height: 80%;               
                     }
                 }
                 }
@@ -302,6 +298,10 @@ const Container = styled.div`
                 overflow-y: auto;
                 overflow-x: hidden;
                 color: ${({ theme }) => theme.colors.text};
+                .text{
+                    font-size: clamp(0.8rem, 0.8vw, 1.5rem);
+                }
+
             }
         }
 
@@ -323,6 +323,8 @@ const Container = styled.div`
             font-weight: 500;
             color: ${({ theme }) => theme.colors.text};
             transition: all 0.5s ease-in-out;
+            font-size: clamp(0.8rem, 0.8vw, 1.5rem);
+
         }
 
         @media (max-width: 1368px) {

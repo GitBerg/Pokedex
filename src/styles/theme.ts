@@ -5,6 +5,7 @@ export const lightTheme = {
     bg_nav: '#DD4B4A',
     text: '#212121',
     card: '#fff',
+    btn: "#0055D1"
   },
 }
 
