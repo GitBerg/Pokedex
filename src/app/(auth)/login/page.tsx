@@ -3,10 +3,14 @@
 import Image from "next/image";
 import styled from "styled-components";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { ToggleBtn } from "@/components/ToggleBtn";
 
 export default function Login() {
 
     const router = useRouter()
+
+    const [modalIsOpen, setModalIsOpen] = useState(false);  
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
           e.preventDefault()
@@ -25,7 +29,8 @@ export default function Login() {
             <div className="header">
                 <div className="itens">
                     <Image src="/logo-pokedex.png" alt="Logo" width={200} height={40} />
-                    <Image src="/settings.svg" alt="Logo" width={25} height={25} />
+                    <Image className={`setting ${modalIsOpen ? 'clicked' : ''}`} src="/settings.svg" alt="setting" width={25} height={25} style={{ cursor: 'pointer' }} onClick={() => setModalIsOpen(modalIsOpen => !modalIsOpen)}/>
+                    <span className={`modal ${modalIsOpen ? 'open' : ''}`}> <ToggleBtn /></span>
                 </div>
             </div>
             <div className="content">
@@ -46,10 +51,11 @@ const Container = styled.div`
     width: 100vw;
     display: flex;
     flex-direction: column;
-
+    background-color: ${({ theme }) => theme.colors.bg_login};
     .header{
         width: 100%;
         height: 80px;
+        position: relative;
         background-color: ${({ theme }) => theme.colors.bg_nav};
 
         .itens{
@@ -59,6 +65,31 @@ const Container = styled.div`
             align-items: center;
             justify-content: space-between;
             padding: 0 40px;
+            transition: all 0.3s ease-in-out;
+
+            .setting{
+                transition: all 0.3s ease-in-out;
+                &.clicked{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        .modal{
+            position: absolute;
+            right: 40px;
+            bottom: -50px;
+            background-color: ${({ theme }) => theme.colors.bg};
+            border-radius: 8px;
+            padding:8px;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease-in-out;
+            &.open{
+                opacity: 1;
+                pointer-events: all;
+                transform: translateY(10px);
+            }
         }
     }
 
@@ -85,10 +116,12 @@ const Container = styled.div`
             outline: none;
             input{
                 padding: 12px 10px;
-                border: 1px solid #e4e4e4;
+                border: 1px solid ${({ theme }) => theme.colors.border};
                 border-radius: 2px;
+                color: ${({ theme }) => theme.colors.text};
                 outline: none;
                 font-weight: 600;
+                background-color: ${({ theme }) => theme.colors.bg_login};
                 &::placeholder{
                     color: #8f8f8f;
                 }
