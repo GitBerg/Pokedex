@@ -1,8 +1,21 @@
 'use client'
 
 import { ThemeProvider as StyledThemeProvider } from 'styled-components'
-import { ReactNode, useEffect, useState } from 'react'
+import { createContext, useContext, useState, ReactNode, useEffect } from 'react'
 import { darkTheme, lightTheme, ThemeType } from '../../styles/theme'
+
+interface ThemeCtx {
+  theme: ThemeType
+  toggle: () => void
+}
+
+const ThemeContext = createContext<ThemeCtx>({
+  theme: lightTheme,
+  toggle: () => {},
+})
+
+export const useThemeCtx = () => useContext(ThemeContext)
+
 
 export default function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<ThemeType>(lightTheme)
@@ -19,22 +32,8 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
   }
 
   return (
-    <StyledThemeProvider theme={theme}>
-      <button
-        onClick={toggle}
-        style={{
-          position: 'fixed',
-          bottom: 24,
-          right: 24,
-          padding: '8px 12px',
-          background: theme.colors.primary,
-          color: theme.colors.bg,
-          borderRadius: 8,
-        }}
-      >
-        {theme.name === 'light' ? 'Dark' : 'Light'}
-      </button>
-      {children}
-    </StyledThemeProvider>
+    <ThemeContext.Provider value={{ theme, toggle }}>
+      <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>
+    </ThemeContext.Provider>
   )
 }

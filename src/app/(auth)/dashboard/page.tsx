@@ -1,9 +1,20 @@
+'use client' 
+
+import CardGrid from "@/components/CardGrid";
 import  NavigationBar  from "@/components/NavigationBar"
+import styled from "styled-components";
 
 export default function Dashboard() {
     return (
-        <main style={{ display: "flex", height: "100vh" }}>
+        <Container>
             <NavigationBar />
-        </main>
+            <CardGrid />
+        </Container>
     );
 }
+
+const Container = styled.div`
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+`

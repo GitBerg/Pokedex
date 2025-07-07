@@ -4,11 +4,17 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
 ol, ul {
 	list-style: none;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
-  height: 100vh;
+  font-size: clamp(0.7rem, 0.9vw, 2rem); 
 }
