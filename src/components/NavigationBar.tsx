@@ -117,6 +117,7 @@ const Container = styled.nav`
             font-size: 2rem;
             fill: #fff;
             cursor: pointer;
+            user-select: none;
         }
 
     }

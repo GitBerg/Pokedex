@@ -21,7 +21,7 @@ export const Container = styled.div`
             align-items: center;
             gap: 0.5rem;
             h1{
-                font-size: clamp(1.3rem, 2.3vw, 4rem);
+                font-size: clamp(1.1rem, 2.3vw, 4rem);
                 color: #fff;
                 font-weight: 400;
             }
@@ -319,6 +319,7 @@ export const Container = styled.div`
         font-size: 2rem;
         pointer-events: initial;
         transition: all 0.3s ease-in-out;
+        user-select: none;
        }
 
        .open{

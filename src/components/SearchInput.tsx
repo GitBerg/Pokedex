@@ -51,5 +51,7 @@ const Container = styled.div`
     bottom: 33px;
     fill: ${({ theme }) => theme.colors.text};
     transition: all 0.5s ease-in-out;
+    user-select: none;
+    pointer-events: none;
   }
 `
