@@ -13,7 +13,6 @@ import { ToggleBtn } from './ToggleBtn';
 import { useTheme } from 'styled-components'
 import { RiMenuFold4Line } from "react-icons/ri";
 import { Container } from '@/styles/cardGridStyles';
-import { useState } from 'react';
 
 
 
@@ -38,7 +37,7 @@ export default function CardGrid() {
         data: pokeImg,
         loading: pokeImgLoading,
     } = useQuery(GET_POKEMONS, {
-        variables: { limit: 1025, offset: 0 },
+        variables: { limit: 1302, offset: 0 },
     })
 
 
