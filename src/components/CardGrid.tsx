@@ -60,7 +60,7 @@ export default function CardGrid() {
             <section className='section-bottom'>
                 <div className='pokemon-stats'>
                     <div className='pokemon-image card'>
-                        {pokeImgLoading ? (<Skeleton width={200} height={180} baseColor={theme.colors.card} highlightColor={theme.colors.bg} />)
+                        {pokeImgLoading ? (<Skeleton width={200} height={150} baseColor={theme.colors.card} highlightColor={theme.colors.bg} />)
                             : (<Image src={pokeImg?.pokemons?.results[currentPokemon.index]?.dreamworld} onError={(e) => { e.currentTarget.src = pokeImg?.pokemons?.results[currentPokemon.index]?.artwork }} alt={"Image"} width={300} height={300} priority />)
                         }
                     </div>

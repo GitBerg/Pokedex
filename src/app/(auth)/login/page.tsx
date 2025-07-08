@@ -138,4 +138,14 @@ const Container = styled.div`
             }
         }
     }
+
+    @media (max-width: 425px) {
+        .form{
+            width: 100%;
+            padding: 0 40px;
+            .inputs{
+                width: 100%;
+            }
+        }
+    }
 `

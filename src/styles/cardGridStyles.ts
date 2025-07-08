@@ -21,7 +21,7 @@ export const Container = styled.div`
             align-items: center;
             gap: 0.5rem;
             h1{
-                font-size: clamp(1.5rem, 2.3vw, 4rem);
+                font-size: clamp(1.3rem, 2.3vw, 4rem);
                 color: #fff;
                 font-weight: 400;
             }
@@ -121,7 +121,7 @@ export const Container = styled.div`
                     align-items: center;
                     font-weight: 400;
                     border-radius: 6px;
-                    font-size: clamp(0.8rem, 0.8vw, 3rem);
+                    font-size: clamp(0.6rem, 0.8vw, 3rem);
                     color: #fff;
                     padding: 4px 8px; 
                 }
