@@ -337,10 +337,10 @@ export const Container = styled.div`
                 height: 60%;
                 .pokemon-image{
                     padding: 0;
-                    height: 40%;
+                    min-height:150px;
                 }
                 .pokemon-attributes{
-                    height: 20%;
+                    min-height: 105px;
                 }
             }
             .pokemon-description{
@@ -355,7 +355,12 @@ export const Container = styled.div`
     }
 
      @media (max-width: 500px) {
+        height: fit-content;
         padding: 2rem;
+
+        .section-bottom .pokemon-stats .pokemon-image img {
+            padding: 40px;
+        }
      }
     
 `
