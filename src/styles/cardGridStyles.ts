@@ -387,6 +387,10 @@ export const Container = styled.div`
          .section-bottom{
             padding: 0;
         }
+
+        &.nav-open{
+            height: 100dvh;
+        }
      }
    
 `

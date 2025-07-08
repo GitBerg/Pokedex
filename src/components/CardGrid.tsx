@@ -42,7 +42,7 @@ export default function CardGrid() {
 
 
     return (
-        <Container className='scrollable'>
+        <Container className={`scrollable ${navBar ? 'nav-open' : ''}`}>
             <RiMenuFold4Line className={`${navBar ? 'open' : ''} menu-icon`} onClick={() => setNavBar()} />
             <section className='section-top'>
                 <div className='pokemon-name'>
