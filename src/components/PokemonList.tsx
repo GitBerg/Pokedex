@@ -60,6 +60,9 @@ const Container = styled.ul`
         }
         color: #fff;
         cursor: pointer;
+        :hover{
+            text-decoration: underline;
+        }
     }
     .selected{
         font-weight: 800;

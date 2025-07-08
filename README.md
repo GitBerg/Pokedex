@@ -8,7 +8,7 @@ Uma Pokédex moderna que consome a PokéAPI via GraphQL, oferece pesquisa em tem
 |--------|-----------|
 |`/Login`| Formulário com validação nativa, salva cookie + localStorage para liberar acesso ao Dashboard.|
 |`Middleware de proteção`| Bloqueia /dashboard para quem não preencheu e‑mail, evitando acesso direto pela URL.|
-|`/Dashboard`| Barra lateral com 1025 Pokémon; filtro instantâneo por nome ou número; CardGrid com detalhes.|
+|`/Dashboard`| Barra lateral com 1025 Pokémons; filtro instantâneo por nome ou número; CardGrid com detalhes.|
 |`Tema dinâmico`| Alternância claro/escuro persistida em localStorage, com fade 0 .35 s (transition de cores).|
 |`Cache & Global State`| Apollo Cache para dados; Zustand para tema, Pokémon selecionado e termo de busca.|
 |`Skeletons`| Carregamento enxuto usando react-loading-skeleton.|

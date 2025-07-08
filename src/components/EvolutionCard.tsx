@@ -47,7 +47,7 @@ export default function EvolutionCard({ name } : Props) {
     <div className='evolution-list'>
       {peers.map((p) => (
         <div key={p.name} className='evolution'>
-          <Image src={p.image} onError={(e: any) => (e.target.src = p.fallbackImage)} width={96} height={96} alt={p.name} onClick={() => setCurrent({name: p.name, index: p.id - 1})} priority/>
+          <Image src={p.image} onError={(e: any) => (e.target.src = p.fallbackImage)} width={300} height={300} alt={p.name} onClick={() => setCurrent({name: p.name, index: p.id - 1})} priority/>
           <p>{firstLetterUpper(p.name)}</p>
         </div>
       ))}

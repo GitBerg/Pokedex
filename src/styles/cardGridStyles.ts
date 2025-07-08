@@ -162,6 +162,7 @@ export const Container = styled.div`
                     justify-content: center;
                     align-items: center;
                     cursor: pointer;
+                    object-fit: contain;
                 
                     p{
                         font-weight: 400;
@@ -224,7 +225,7 @@ export const Container = styled.div`
 
         @media (max-width: 1368px) {
         overflow-y: auto;
-        padding: 1.5rem 5rem;
+        padding: 60px 5rem;
         .section-bottom{
             flex-wrap: wrap;
             overflow: visible;
@@ -287,6 +288,7 @@ export const Container = styled.div`
         }
 
     @media (max-width: 1024px) {
+        
         .section-bottom{
             .pokemon-stats{
                 .pokemon-types{
@@ -334,7 +336,16 @@ export const Container = styled.div`
     }
 
     @media (max-width: 768px) {
+        .section-top {
+            width: 80%;
+            .toggle-theme{
+            position: absolute;
+            right: 40px;
+            top: 22px;
+            }
+        } 
         .section-bottom{
+            padding: 0 50px;
             .pokemon-stats{
                 display: flex;
                 flex-direction: column;
@@ -344,7 +355,8 @@ export const Container = styled.div`
                     padding: 0;
                     min-height:150px;
                     img{
-                        padding: 40px;
+                        width: 90%;
+                        height: 90%;
                     }
                 }
                 .pokemon-attributes{
@@ -366,19 +378,15 @@ export const Container = styled.div`
         }
     }
 
-     @media (max-width: 500px) {
+     @media (max-width: 580px) {
         height: fit-content;      
         padding: 40px;
         padding-top: 5rem;
-        gap: 2rem;
-        .section-top {
-            width: 80%;
-            .toggle-theme{
-            position: absolute;
-            right: 40px;
-            top: 22px;
+        gap: 2rem; 
+
+         .section-bottom{
+            padding: 0;
         }
-        }  
      }
-    
+   
 `
