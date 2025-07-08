@@ -132,7 +132,7 @@ const Container = styled.nav`
 
     @media (max-width: 500px) {
         width: 100%;
-
+        height: 100vh;
         .bg{
             display: none;
         }

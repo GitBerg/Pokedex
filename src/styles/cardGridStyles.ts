@@ -389,7 +389,7 @@ export const Container = styled.div`
         }
 
         &.nav-open{
-            height: 100dvh;
+            height: 100vh;
         }
      }
    
