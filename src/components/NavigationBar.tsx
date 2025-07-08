@@ -23,6 +23,7 @@ export default function NavigationBar() {
             <h2>Everything you wanted to know about your favorite pocket monsters!</h2>
             <SearchInput value={search} onChange={setSearch}/>
             </div>
+            <div className='line-box'><span className='line'></span></div>
             <PokemonList onClick={() => setNavBar()}/>
         
         </Container>
@@ -34,9 +35,9 @@ const Container = styled.nav`
     flex-direction: column;
     align-items: center;
     position: relative;
-    padding: 3rem;
-    padding-bottom: 6%;
-    width: 400px;
+    padding: 3rem 0 3rem 3rem;
+    padding-bottom: 80px;
+    width: 350px;
     flex-shrink: 0;
     height: 100%;
     background-color: ${({ theme }) => theme.colors.bg_nav};
@@ -61,23 +62,30 @@ const Container = styled.nav`
         text-align: center;
     }
     .search{
-        border-bottom: 1px solid #fff;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;
-        margin-bottom: 25px;
+        padding-right: 48px;
+    }
+
+    .line-box{
+        width: 100%;
+        height: 1px;
+        padding-right: 48px;
+        margin-bottom: 30px;
+        .line{
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: #fff;
+        }
     }
 
     .close-icon{
         display: none;
     }
-
-    @media (max-width: 1368px) {
-        width: 350px;
-    }
-
 
     @media (max-width: 1024px) {
         display: block;

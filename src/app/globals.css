@@ -18,3 +18,18 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: clamp(0.7rem, 0.9vw, 2rem); 
 }
+
+
+::-webkit-scrollbar{width:8px;height:4px;}
+::-webkit-scrollbar-button{background-color:none !important;width:15px;height:0px;}
+::-webkit-scrollbar-track-piece {background-color:#fff;-webkit-border-radius:10px;}
+::-webkit-scrollbar-thumb:vertical{height:100px;background-color:#07053C;-webkit-border-radius:5px;}
+::-webkit-scrollbar-thumb:horizontal{height:50px;background-color:#07053C;-webkit-border-radius:5px;}
+::-webkit-scrollbar-button:vertical:increment {background-image:none !important;border-radius: 4px;}
+::-webkit-scrollbar-button:vertical:decrement {background-image:none !important;border-radius: 4px;}
+
+
+.scrollable::-webkit-scrollbar-track-piece {
+  background-color: rgba(0, 0, 0, 0);                 
+}
+

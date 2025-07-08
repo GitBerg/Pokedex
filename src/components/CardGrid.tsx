@@ -42,7 +42,7 @@ export default function CardGrid() {
 
 
     return (
-        <Container>
+        <Container className='scrollable'>
             <RiMenuFold4Line className={`${navBar ? 'open' : ''} menu-icon`} onClick={() => setNavBar()} />
             <section className='section-top'>
                 <div className='pokemon-name'>
@@ -106,7 +106,7 @@ export default function CardGrid() {
                             <EvolutionCard name={currentPokemon.name} />
                         )}
                     </div>
-                    <div className='description card'>
+                    <div className='description scrollable card'>
                         <p className='title'>Description</p>
                         <CardDescription description={pokemon?.pokemon?.species?.url} />
                     </div>

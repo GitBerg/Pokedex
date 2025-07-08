@@ -6,10 +6,10 @@ export const Container = styled.div`
     position: relative;
     flex: 1;
     width: 100%;
-    padding: 1.7rem 8rem;
-    padding-bottom: 5%;
+    padding: 60px 8rem;
+    padding-bottom: 1%;
     background-color: ${({ theme }) => theme.colors.bg};
-    gap: 4rem;
+    gap: 5rem;
     transition: all 0.5s ease-in-out;
     overflow: hidden;
     .section-top{
@@ -19,11 +19,16 @@ export const Container = styled.div`
         .pokemon-name{
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            position: relative;
+            padding-right: 10px;
             h1{
-                font-size: clamp(1.1rem, 2.3vw, 4rem);
+                font-size: clamp(2rem, 2.3vw, 4rem);
                 color: #fff;
                 font-weight: 400;
+            }
+            img{
+                position: absolute;
+                right: -100px;
             }
         }
         .toggle-theme{
@@ -311,7 +316,7 @@ export const Container = styled.div`
        .menu-icon{
         display: block;
         position: absolute;
-        left: 25px;
+        left: 40px;
         top: 20px;
         opacity: 1;
         cursor: pointer;
@@ -338,6 +343,9 @@ export const Container = styled.div`
                 .pokemon-image{
                     padding: 0;
                     min-height:150px;
+                    img{
+                        padding: 40px;
+                    }
                 }
                 .pokemon-attributes{
                     min-height: 105px;
@@ -346,6 +354,10 @@ export const Container = styled.div`
             .pokemon-description{
                 min-height: 0;
                 height: 100%;
+                .evolutions{
+                    flex-direction: column;
+                    gap: 0;
+                }
                 .description{
                     min-height: 0;
                 }
@@ -355,12 +367,18 @@ export const Container = styled.div`
     }
 
      @media (max-width: 500px) {
-        height: fit-content;
-        padding: 2rem;
-
-        .section-bottom .pokemon-stats .pokemon-image img {
-            padding: 40px;
+        height: fit-content;      
+        padding: 40px;
+        padding-top: 5rem;
+        gap: 2rem;
+        .section-top {
+            width: 80%;
+            .toggle-theme{
+            position: absolute;
+            right: 40px;
+            top: 22px;
         }
+        }  
      }
     
 `

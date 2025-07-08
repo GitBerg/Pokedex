@@ -50,13 +50,13 @@ const Container = styled.ul`
     flex-direction: column;
     width: 100%;
     height: 100%;
+    max-height: 70%;
     overflow-y: auto;
     overflow-x: hidden;
     li{
         p{
-            font-size: clamp(1rem, 1vw, 5rem);
-            line-height: 1.9em;
-            font-weight: 400;
+            font-size: clamp(1rem, 1.03vw, 5rem);
+            line-height: 39px;
         }
         color: #fff;
         cursor: pointer;
