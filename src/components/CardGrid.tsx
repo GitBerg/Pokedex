@@ -37,7 +37,7 @@ export default function CardGrid() {
         data: pokeImg,
         loading: pokeImgLoading,
     } = useQuery(GET_POKEMONS, {
-        variables: { limit: 1302, offset: 0 },
+        variables: { limit: 1025, offset:0},
     })
 
 

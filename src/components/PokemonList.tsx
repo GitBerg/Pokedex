@@ -1,6 +1,6 @@
 'use client'
 
-import { GET_POKEMONS } from '@/graphql/queries'
+import { GET_POKEMONS_LIST } from '@/graphql/queries'
 import { usePokemonStore } from '@/store/pokemonStore'
 import { extractId, firstLetterUpper, formatWithLeadingZeros } from '@/utils/utilityFunctions'
 import { useQuery } from '@apollo/client'
@@ -16,7 +16,7 @@ export function PokemonList({ onClick }: { onClick: () => void }) {
 
     const theme = useTheme()
 
-    const { data, loading } = useQuery(GET_POKEMONS, {
+    const { data, loading } = useQuery(GET_POKEMONS_LIST, {
             variables: { limit: 1025, offset: 0 },
         })
 

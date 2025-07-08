@@ -4,12 +4,20 @@ export const GET_POKEMONS = gql`
   query pokemons($limit: Int, $offset: Int) {
   pokemons(limit: $limit, offset: $offset) {
     results {
-      id
-      url
-      name
       image
       dreamworld
       artwork
+    }
+  }
+}
+`
+
+export const GET_POKEMONS_LIST = gql`
+  query pokemons($limit: Int, $offset: Int) {
+  pokemons(limit: $limit, offset: $offset) {
+    results {
+      id
+      name
     }
   }
 }
